@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+    <link rel="stylesheet" type="text/css" href="component/font-awesome.min.css"></link>
+    <script src="component/angular.js"></script>
+    <script src="component/jquery-1.12.2.min.js"></script>
+    <script src="component/bootstrap.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+<div class="container">
+    <div task-directive></div>
+
+</div>
+<script src="js/script.js"></script>
+<script src="js/directive/taskDirective.js"></script>
+<script src="js/controller/taskController.js"></script>
+<script src="js/services/taskService.js"></script>
+
+
+</body>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+</html>
