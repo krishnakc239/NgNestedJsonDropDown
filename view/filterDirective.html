@@ -1,0 +1,81 @@
+<div class="row col-lg-6">
+    <div class="form-group col-lg-12">
+        <h3>2. Custome Filter Application</h3>
+    </div>
+    <div class="form-group col-lg-12">
+        <h3>A. Date Formatting</h3>
+    </div>
+    <table class="table table-bordered">
+        <tr>
+            <td>
+                <label>Date input :</label>
+            </td>
+            <td>
+                <input type="date" ng-model="myDate">
+            </td>
+        </tr>
+            <tr>
+                <td>
+                    <label>Date in Year-Month-Day Format(eg: 2017 Jan 17) :</label>
+                </td>
+                <td>
+                    </label> <label>{{myDate| date:"y MMM, d h:mm a"}}</label>
+                </td>
+            </tr>
+
+    </table>
+    <div class="form-group col-lg-12">
+        <h3>B. CamelCase letter to Regualar form</h3>
+    </div>
+    <table class="table table-bordered">
+        <tr>
+            <td>
+                <label>Type camelCase text :</label>
+            </td>
+            <td>
+                <input type="text" ng-model="my_text">
+            </td>
+        <tr>
+            <td>
+                <button ng-click="camelCase()" class="btn btn-success">Convert</button>
+            </td>
+            <td>
+                <label><input type="text" value="{{camelcase}}"/> </label>
+            </td>
+        </tr>
+        </tr>
+    </table>
+    <div class="form-group col-lg-12">
+        <h3>C. Compare user input date to current date</h3>
+    </div>
+    <table class="table table-bordered">
+        <tr>
+            <td>
+                <label>User Date input :</label>
+            </td>
+            <td>
+                <input type="date" ng-model="userDate"><span>{{userDate|date:"MMM d y "}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Current Date  :</label>
+            </td>
+            <td>
+                {{today|date:"MMM d y "}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label><button class="btn btn-success" ng-click="dateDifferrence()">View Difference </button> </label>
+            </td>
+            <td>
+                <label> {{}}</label>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
