@@ -19,7 +19,7 @@
                     <label>Date in Year-Month-Day Format(eg: 2017 Jan 17) :</label>
                 </td>
                 <td>
-                    </label> <label>{{myDate| date:"y MMM, d h:mm a"}}</label>
+                    </label> <label>{{myDate| date:"y MMM, d"}}</label>
                 </td>
             </tr>
 
@@ -54,7 +54,7 @@
                 <label>User Date input :</label>
             </td>
             <td>
-                <input type="date" ng-model="userDate"><span>{{userDate|date:"MMM d y "}}</span>
+                <input type="datetime-local" ng-model="date">
             </td>
         </tr>
         <tr>
@@ -62,20 +62,53 @@
                 <label>Current Date  :</label>
             </td>
             <td>
-                {{today|date:"MMM d y "}}
+                {{today|date:'MMM, d y hh:mm:ss'}} sec
             </td>
         </tr>
         <tr>
             <td>
-                <label><button class="btn btn-success" ng-click="dateDifferrence()">View Difference </button> </label>
+                <label><button class="btn btn-success" ng-click="dateDifferrence(date)">View Difference </button> </label>
             </td>
             <td>
-                <label> {{}}</label>
+                <label> {{differnce}}</label>
             </td>
         </tr>
     </table>
+
+</div>
     <br>
-    <br>
-    <br>
-    <br>
+    <div class="row col-lg-12">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <h3> Original Data</h3>
+            </div>
+            <table class="table table-bordered">
+                <tr>
+                    <td>Date</td>
+                    <td>Task</td>
+                </tr>
+                <tr ng-repeat="item in  array">
+                    <td>
+                        <label>{{item.date | date :'MMM/d/y'}}</label>
+                    </td>
+                    <td>
+                        <label>{{item.event}}</label>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <h3>Sorted Data</h3>
+            </div>
+            <div ng-repeat="(key, value) in array  |orderBy:'date.slice(0,10)'| groupBy:'date.slice(0,10)'" >
+                <h4>{{key.slice(0,10)}}</h4>
+                <ul>
+                    <li ng-repeat="data in value| orderBy:'date.slice(10)'">{{data.date.slice(10)}} = {{data.event}}</li>
+                </ul>
+            </div>
+
+        </div>
+
 </div>
