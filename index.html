@@ -2,28 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/style.css"></link>
-    <link rel="stylesheet" type="text/css" href="component/font-awesome.min.css"></link>
+    <title>Task</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="component/font-awesome.min.css"/>
+    <link rel="icon" href="fonts/glyphicons-halflings-regular.woff2"/>
 
 </head>
 
 <body ng-app="myApp">
+
 <div class="container">
-    <div task-directive></div>
+    <div drop-down-directive></div>
     <div filter-directive></div>
+    <div infinite-scroll-directive></div>
 </div>
+
 <script src="component/angular.js"></script>
-<script src="component/jquery-1.12.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.16/angular-filter.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.js"></script>
+<script type="text/javascript" src="component/ngInfiniteScroll.js"></script>
+<!--<script src="component/angular-sn-infinite-scroll.min.js"></script>-->
 <script src="component/bootstrap.min.js"></script>
 <script src="js/script.js"></script>
-<script src="js/directive/taskDirective.js"></script>
+<script src="js/directive/dropDownDirective.js"></script>
 <script src="js/directive/filterDirective.js"></script>
+<script src="js/directive/infiniteScrollDirective.js"></script>
 <script src="js/controller/filterController.js"></script>
-<script src="js/controller/taskController.js"></script>
-<script src="js/services/taskService.js"></script>
+<script src="js/controller/dropDownController.js"></script>
+<script src="js/controller/infiniteScrollController.js"></script>
+<script src="js/services/dropDownService.js"></script>
 <script src="js/filter/camelcaseFilter.js"></script>
+<script src="js/filter/dateDiffFilter.js"></script>
+
 
 
 </body>
