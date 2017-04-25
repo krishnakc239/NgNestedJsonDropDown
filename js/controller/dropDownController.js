@@ -29,12 +29,9 @@ app.controller('dropDownController', ['$scope','dropDownService',
 
                     $scope.vdcs = dropDownService.getDistrictVdc(id);
                 }else {
-                    // $scope.districts="";
                     $scope.vdcs="";
                 }
-
-                // console.log($scope.customer.District.id+" district  id")
-            }
+           }
 
             $scope.save=function (customer) {
                 $scope.zoneName=customer.Zone.zone;
