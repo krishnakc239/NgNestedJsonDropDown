@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="form-group col-sm-10 min-padding">
+        <div class="form-group ">
+            <div class="form-group col-lg-12">
+                <h3>3. Infinite Scrollable Table</h3>
+            </div>
+            <div id="list-wrapper">
+                <div class="list" infinite-scroll='loadMore()'
+                     infinite-scroll-distance='1'
+                     infinite-scroll-container="'#list-wrapper'">
+                    <div class="header">
+
+                    </div>
+
+                    <div class="list-table" >
+                        <table class="table">
+                            <tbody>
+                            <tr ng-repeat="item in infiniteList">
+                                <td style="width:100%">
+                                    <div>{{item}}</div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style='clear: both;'></div>
+                </div>
+            </div>
+
+            <h4>{{scrollTriggered}}</h4>
+        </div>
+    </div>
+</div>
