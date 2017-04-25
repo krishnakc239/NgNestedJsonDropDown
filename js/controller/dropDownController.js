@@ -1,5 +1,5 @@
-app.controller('taskController', ['$scope','taskService',
-        function($scope, taskService) {
+app.controller('dropDownController', ['$scope','dropDownService',
+        function($scope, dropDownService) {
         $scope.today= new Date();
             $scope.customer ={
                 Zone:'',
@@ -11,11 +11,11 @@ app.controller('taskController', ['$scope','taskService',
             $scope.vdcs="";
 
 
-            $scope.zones=taskService.getZone();
+            $scope.zones=dropDownService.getZone();
 
             $scope.getZoneDistrict = function(id){
                 if(id!==undefined) {
-                    $scope.districts = taskService.getZoneDistrict(id);
+                    $scope.districts = dropDownService.getZoneDistrict(id);
 
 
                 }else {
@@ -27,7 +27,7 @@ app.controller('taskController', ['$scope','taskService',
             $scope.getDistrictVdc = function(id){
                 if(id!==undefined) {
 
-                    $scope.vdcs = taskService.getDistrictVdc(id);
+                    $scope.vdcs = dropDownService.getDistrictVdc(id);
                 }else {
                     // $scope.districts="";
                     $scope.vdcs="";
