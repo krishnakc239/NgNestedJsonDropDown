@@ -1,0 +1,70 @@
+a{
+    color: white;
+}
+body{
+    background-color: #ffffff;
+    /*color: white;*/
+
+}
+nav{
+    background-color: #449d44;!important;
+}
+.navbar-brand{
+    background-color: #761c19;
+    font-weight: bolder;
+}
+table{
+    background-color: white;!important;
+}
+.form-horizontal{
+    /*background-color: #d6e9c6;*/
+    width: auto;
+    /*padding-left: 300px;*/
+}
+input{
+    color: black;
+}
+th{
+    width: 80px;
+}
+td {
+    width: 80px;
+}
+h3{
+    color: #1b6d85;
+    font-family: cursive;
+}
+span{
+    color: red;
+}
+.thumbnail{
+    padding-top: 5px;
+    color: white;
+    font-family: cursive;
+}
+.container{
+    /*margin-bottom: 20px;*/
+}
+.footer{
+    margin-top: 6px;
+}
+#registerUser {
+    margin-top: 50px;
+}
+
+input {
+    border-radius: 3px;
+}
+
+
+.control-label {
+    font-weight: bold;
+}
+.jumbotron{
+    background-color: white;
+}.table p{
+     color: black;
+ }
+ .error{
+     color: red;
+ }

@@ -1,0 +1,133 @@
+<div ng-app="myApp"  class="container" >
+    <div class="thumbnail text-center" style="background-color: #2b542c">
+    <h4>Task :Nested Json Data Plot  To Dropdown & Application of Custom Filters </h4>
+    <h4>Assigned By: Bipin Khanal</h4>
+    <h4>Submitted By: Krishna K.C</h4>
+    </div>
+<div class="row">
+    <div class=" ">
+        <h3>1. Directive with nested dropdown</h3>
+    </div>
+    <div class="col-lg-6">
+        <div class=" ">
+            <h3>Please provide your information.</h3>
+        </div>
+        <br>
+    <form class="form-horizontal" name="myForm">
+        <div class="form-group">
+            <label for="country" class="col-sm-2 control-label">Zone </label>
+            <div class="col-sm-6">
+                <select ng-model="customer.Zone"
+                        ng-options="z as z.zone for z in zones"
+                        ng-change="getZoneDistrict(customer.Zone.id)"
+                        class="form-control"
+                        ng-required="true"
+                        id="country">
+                    <option value="">-- Choose zone --</option>
+                </select>
+                <!--<span>{{customer.Zone.zone}}</span>-->
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="state" class="col-sm-2 control-label">District </label>
+            <div class="col-sm-6">
+                <select ng-model="customer.District"
+                        ng-options="d as d.district for d in districts"
+                        ng-change = "getDistrictVdc(customer.District.id)"
+                        class="form-control"
+                        ng-required="true"
+                        id="state">
+                    <option value="">-- Choose District --</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="city" class="col-sm-2 control-label">VDC </label>
+            <div class="col-sm-6">
+                <select  ng-model="customer.Vdc"
+                         ng-options="v as v.vdc for v in vdcs"
+                         class="form-control"
+                         ng-required="true"
+                         id="city">
+                    <option value="">-- Choose VDC --</option>
+                </select>
+            </div>
+        </div>
+
+            <div class="form-group">
+                <label for="wardNo" class="col-sm-2 control-label">
+                    Ward No: </label>
+                <div class="col-sm-6">
+                    <input ng-model="customer.wardNo"
+                           name="wardNo"
+                           type="text"
+                           ng-pattern="/^(0[1-9]|[1-9]\d)$/"
+                           class="form-control"
+                           ng-required="true"
+                           id="wardNo"/>
+                    <span ng-show="myForm.wardNo.$touched && myForm.wardNo.$error.required">The ward No is required.</span>
+                    <span ng-show=" myForm.wardNo.$error.pattern">Enter 2 digit only.</span>
+                    <!--<span ng-show="myForm.wardNo.$touched  && myForm.wardNo.$error.maxlength">Maximum 2 digit only.</span>-->
+                    <!--<span ng-show="myForm.wardNo.$error.pattern">pattern error</span>-->
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tole" class="col-sm-2 control-label pull-left">
+                    Tole: </label>
+                <div class="col-sm-6 ">
+                    <label class=" glyphicon glyphicon-info-sign  pull-right"   data-toggle="tooltip" data-placement="right"
+                           title="Provide your tole name!!!!"
+                           onmouseenter="($(this).tooltip('show'))"></label>
+                    <input ng-model="customer.tole"
+                           name="tole"
+                           type="text"
+                           class="form-control pull-left"
+                           ng-required="true"
+                           id="tole"
+                           ng-pattern="/^([a-zA-Z]{3,})$/"
+                           />
+                    <span class="pull-left"  ng-show="myForm.tole.$touched && myForm.tole.$error.required && myForm.tole.$invalid">The tole name is required.</span>
+                    <span class="pull-left"  ng-show="myForm.tole.$error.pattern"> Mininum 3 characters, without space.</span>
+                </div>
+            </div>
+
+        <div class="form-group">
+            <div class="col-lg-offset-4">
+                <button class="btn btn-success" ng-disabled="myForm.$invalid" ng-click="save(customer)">  Save  </button>
+            </div>
+        </div>
+    </form>
+    </div>
+    <div class="form-group col-lg-6">
+        <div class=" ">
+            <h3>My address</h3>
+        </div>
+        <br>
+        <table class="table table-bordered table-responsive">
+
+            <tr><th>Zone</th>
+                <td>{{zoneName}}</td>
+            </tr>
+            <tr> <th>District</th>
+                <td>{{districtName}}</td>
+            </tr>
+            <tr> <th>VDC</th>
+                <td>{{vdcName}}</td>
+            </tr>
+            <tr>  <th>Ward No</th>
+                <td>{{wardNo}}</td>
+            </tr>
+            <tr><th>Tole</th>
+                <td>{{tole}}</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+</div>
+
+</div>
